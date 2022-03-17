@@ -28,6 +28,11 @@ namespace _2proj2.Controllers
             return View();
         }
 
+        public IActionResult TimeForm()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

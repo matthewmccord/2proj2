@@ -1,0 +1,29 @@
+﻿@{
+
+}
+
+@model _2proj2.Models.User
+
+<h1>Fill out time form</h1>
+
+<div>
+    <form method="post">
+        @*<label asp-for="@c.TimeID">"@c.TimeID\>@c.Start"-"@c.TimeID\>@c.End"</label>
+        <br />*@
+
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" /><br />
+
+        <label asp-for="GroupSize">GroupSize</label>
+        <input asp-for="GroupSize" /><br />
+
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" /><br />
+
+        <label asp-for="PhoneNumber">PhoneNumber</label>
+        <input asp-for="PhoneNumber" /><br />
+
+        <button type="submit">Submit User Information</button>
+        <div asp-validation-summary="All"></div>
+    </form>
+</div>
