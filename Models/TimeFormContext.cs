@@ -98,49 +98,28 @@ namespace _2proj2.Models
                 },
             ); 
 
-            mb.Entity<ApplicationResponse>().HasData(
+            mb.Entity<User>().HasData(
 
-                new ApplicationResponse
+                new User
                 {
-                    MovieId = 1,
-                    CategoryID = 4,
-                    Title = "Dark Knight Rises",
-                    Year = 2012,
-                    Director = "Christopher Nolan",
-                    Rating = "PG-13",
-                    Edited = false,
-                    Lent = "",
-                    Notes = ""
-
-                },
-                new ApplicationResponse
-                {
-                    MovieId = 2,
-                    CategoryID = 4,
-                    Title = "Batman Begins",
-                    Year = 2005,
-                    Director = "Christopher Nolan",
-                    Rating = "PG-13",
-                    Edited = false,
-                    Lent = "",
-                    Notes = ""
+                    GroupId =2,
+                    Name = "Austin Berg",
+                    GroupSize = 25,
+                    Email = "aberg21@gmail.com",
+                    PhoneNumber = "123-456-7890",
+                    TimeId = 1
 
 
                 },
-                new ApplicationResponse
+                new User
                 {
-                    MovieId = 3,
-                    CategoryID = 4,
-                    Title = "The Dark Knight",
-                    Year = 2008,
-                    Director = "Christopher Nolan",
-                    Rating = "PG-13",
-                    Edited = false,
-                    Lent = "",
-                    Notes = ""
-
-
-                }
+                    GroupId = 2,
+                    Name = "matt mccord",
+                    GroupSize = 6,
+                    Email = "test@test.com",
+                    PhoneNumber = "123-456-7234",
+                    TimeId = 4
+                }      
             );
         }
     }

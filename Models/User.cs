@@ -21,6 +21,7 @@ namespace _2proj2.Models
         // add in the connection with the time slot
         [Required]
         public int TimeId { get; set; }
+        public Time Time { get; set; }
 
 
     }
