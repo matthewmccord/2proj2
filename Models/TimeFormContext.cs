@@ -257,22 +257,7 @@ namespace _2proj2.Models
                     End = new DateTime(2022, 4, 3, 16, 59, 59),
                     Available = true
                 }, new Time
-
-            mb.Entity<ApplicationResponse>().HasData(
-
-                new ApplicationResponse
-                {
-                    MovieId = 1,
-                    CategoryID = 4,
-                    Title = "Dark Knight Rises",
-                    Year = 2012,
-                    Director = "Christopher Nolan",
-                    Rating = "PG-13",
-                    Edited = false,
-                    Lent = "",
-                    Notes = ""
-
-                {
+                { 
                     TimeID = 62,
                     Start = new DateTime(2022, 4, 5, 17, 0, 0),
                     End = new DateTime(2022, 4, 5, 17, 59, 59),
