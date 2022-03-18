@@ -660,7 +660,7 @@ namespace _2proj2.Models
                 },
                 new User
                 {
-                    GroupId = 2,
+                    GroupId = 3,
                     Name = "matt mccord",
                     GroupSize = 6,
                     Email = "test@test.com",
