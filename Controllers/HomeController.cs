@@ -11,11 +11,14 @@ namespace _2proj2.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private TimeFormContext FormContext { get; set; }
+        
+        
+        
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(TimeFormContext form_context)
         {
-            _logger = logger;
+            FormContext = form_context;
         }
 
         public IActionResult Index()
@@ -28,9 +31,25 @@ namespace _2proj2.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult TimeForm()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult TimeForm(User u)
+        {
+            if (ModelState.IsValid)
+            {
+                FormContext.Add(u);
+                FormContext.SaveChanges();
+                return View(u);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

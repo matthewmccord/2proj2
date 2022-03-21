@@ -18,6 +18,7 @@ namespace _2proj2.Models
         public int GroupSize { get; set; }
         [Required(ErrorMessage = "Please enter an email")]
         public string Email { get; set; }
+        [Phone]
         public string PhoneNumber { get; set; }
         // add in the connection with the time slot
         [Required]
