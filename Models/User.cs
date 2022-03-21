@@ -11,11 +11,12 @@ namespace _2proj2.Models
         [Key]
         [Required]
         public int GroupId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please enter a name")]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please enter a number between 1 and 15")]
+        [Range(0, 15)]
         public int GroupSize { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please enter an email")]
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         // add in the connection with the time slot
