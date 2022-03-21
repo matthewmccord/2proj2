@@ -44,11 +44,12 @@ namespace _2proj2.Controllers
             {
                 FormContext.Add(u);
                 FormContext.SaveChanges();
-                return View(u);
+
+                return View("Confirmation", u);
             }
             else
             {
-                return View();
+                return View(u);
             }
         }
 
