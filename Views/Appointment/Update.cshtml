@@ -29,7 +29,7 @@
                 </div>
                 <div class="mb-3">
                     <label asp-for="GroupSize" class="form-label">Group Size</label>
-                    <input type="number" asp-for="GroupSize" class="form-control" required>
+                    <input type="number" asp-for="GroupSize" class="form-control" min=1 max=15 required>
                 </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%">Reserve Appointment</button>
             </form>

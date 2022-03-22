@@ -14,6 +14,7 @@ namespace _2proj2.Models
             MakeAvailable();
         }
 
+        [Key]
         public int GroupId { get; set; } //aka AppointmentId
 
         // add in the connection with the time slot

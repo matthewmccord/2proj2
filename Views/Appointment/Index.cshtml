@@ -1,8 +1,15 @@
-﻿
-@model List<_2proj2.Models.User>
+﻿@model List<_2proj2.Models.User>
 
-<table class="table">
-    <thead>
+<h3>Scheduled Appointments</h3>
+<br />
+
+
+<div>
+
+</div>
+
+<table class="table table-sm table-striped table-bordered table-hover">
+    <thead class="thead-dark">
         <tr>
             <td>Date</td>
             <td>Time</td>
@@ -24,8 +31,8 @@
                 <td>@u.Phone</td>
                 <td>@u.GroupSize</td>
                 <td>
-                    <a href="/Appointments/Update/@u.GroupId" class="btn btn-info">Edit</a>
-                    <a href="/Appointments/Delete/@u.GroupId" class="btn btn-danger">Delete</a>
+                    <a href="/Appointment/Update/@u.GroupId" class="btn btn-warning">Edit</a>
+                    <a href="/Appointment/Delete/@u.GroupId" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }

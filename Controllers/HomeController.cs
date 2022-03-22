@@ -72,8 +72,8 @@ namespace _2proj2.Controllers
 
     //        return View("TimeForm", x);
     //    }
-            
-        
+
+
 
     //    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     //    public IActionResult Error()

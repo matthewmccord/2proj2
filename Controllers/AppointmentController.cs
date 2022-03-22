@@ -24,7 +24,7 @@ namespace _2proj2.Controllers
         }
 
         [HttpGet]
-        [Route("/User/Update/{id:int}")]
+        [Route("/Appointment/Update/{id:int}")]
         public IActionResult Update(int id)
         {
             User u = _userRepository.GetUserById(id);
@@ -52,7 +52,7 @@ namespace _2proj2.Controllers
             return View(u);
         }
 
-        [Route("/Users/Delete/{id:int}")]
+        [Route("/Appointment/Delete/{id:int}")]
         public IActionResult Delete(int id)
         {
             User u = _userRepository.GetUserById(id);

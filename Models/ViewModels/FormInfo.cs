@@ -19,5 +19,5 @@ namespace _2proj2.Models.ViewModels
         public DateTime Date { get; set; }
 
     }
-  
+
 }

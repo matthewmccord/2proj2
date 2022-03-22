@@ -1,6 +1,7 @@
 using _2proj2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -31,6 +32,10 @@ namespace _2proj2
             {
                 options.UseSqlite(Configuration["ConnectionStrings:TempleConnection"]);
             });
+
+            // plugging in the appliance into the outlet
+            services.AddScoped<IUserRepository, EFUserRepository>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

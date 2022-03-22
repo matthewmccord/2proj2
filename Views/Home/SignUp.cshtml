@@ -5,27 +5,77 @@
 }
 @*@model List<Time>
 
-<h1>Sign Up Page</h1>
+    <h1>Sign Up Page</h1>
 
 
 
-<table>
-    <tbody>
-        @foreach (var x in Model.Where(x => x.Start.ToString("ddd") == "Wed"))
-        {
-                <tr>
-                    <td>@x.TimeID</td>
-                    <td>@x.Start.ToShortDateString()</td>
-                    <td>@x.End.ToShortDateString()</td>
-                    <td>@x.Available</td>
-                </tr>
-        <form method="get" asp-action="test">
-            <input type="hidden" value="@x.TimeID" name="timeid" />
-            <button type="submit">@x.Start.ToShortDateString()</button>
-        </form>
+    <table>
+        <tbody>
+            @foreach (var x in Model.Where(x => x.Start.ToString("ddd") == "Wed"))
+            {
+                    <tr>
+                        <td>@x.TimeID</td>
+                        <td>@x.Start.ToShortDateString()</td>
+                        <td>@x.End.ToShortDateString()</td>
+                        <td>@x.Available</td>
+                    </tr>
+            <form method="get" asp-action="test">
+                <input type="hidden" value="@x.TimeID" name="timeid" />
+                <button type="submit">@x.Start.ToShortDateString()</button>
+            </form>
 
-                
-        }
-    </tbody>
 
-</table>*@
+            }
+        </tbody>
+
+    </table>*@
+
+@{ ViewData["Title"] = "Home Page"; }
+
+@model _2proj2.Models.ViewModels.FormInfo;
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <form method='POST' asp-action="GetAvailableUsersByDate" asp-controller="Home">
+                <input class="form-control" type='date' asp-for="Date" />
+                <br />
+                <button type="submit" class="btn btn-primary" style="width: 100%">Go</button>
+            </form>
+            <br />
+            @if (ViewBag.Users != null)
+            {
+                <p>Selct an available time slot</p>
+                <br />
+                foreach (User u in ViewBag.Users)
+                {
+                    <div style="margin-top: 8px; margin-bottom: 8px;">
+                        @if (u.IsAvailable)
+                        {
+                            <a type="button" href="/Appointment/Update/@u.GroupId" class="btn btn-secondary" style="width: 100%">
+                                @u.Start.ToString("hh:mm tt") - @u.End.ToString("hh:mm tt")
+                            </a>
+
+                        }
+                        else
+                        {
+                            <button type="button" class="btn btn-secondary" disabled style="width: 100%">
+                                @u.Start.ToString("hh:mm tt") - @u.End.ToString("hh:mm tt") [@u.Name]
+                            </button>
+                        }
+                    </div>
+                }
+                @if (ViewBag.Users.Count == 0)
+                {
+                    <div>No Appointments Found!</div>
+                }
+            }
+
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
