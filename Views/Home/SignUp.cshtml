@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Time>
+
+<h1>Sign Up Page</h1>
+
+
+
+<table>
+    <tbody>
+        @foreach (var x in Model.Where(x => x.Start.ToString("ddd") == "Wed"))
+        {
+                <tr>
+                    <td>@x.TimeID</td>
+                    <td>@x.Start.ToShortDateString()</td>
+                    <td>@x.End.ToShortDateString()</td>
+                    <td>@x.Available</td>
+                </tr>
+        <form method="get" asp-action="test">
+            <input type="hidden" value="@x.TimeID" name="timeid" />
+            <button type="submit">@x.Start.ToShortDateString()</button>
+        </form>
+
+                
+        }
+    </tbody>
+
+</table>

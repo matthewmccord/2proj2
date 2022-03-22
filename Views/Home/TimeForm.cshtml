@@ -2,29 +2,31 @@
 
 }
 
-@model _2proj2.Models.User
+@model _2proj2.Models.ViewModels.FormInfo
+
 
 <h1>Fill out time form</h1>
 
 <div>
-    <form method="post">
+    <form method="post" asp-action="TimeForm">
         @*<label asp-for="@c.TimeID">"@c.TimeID\>@c.Start"-"@c.TimeID\>@c.End"</label>
         <br />*@
+        <label asp-for="@Model.time.Start">@Model.time.Start</label>
+        <br />
         <div asp-validation-summary="All" class="text-danger"></div>
+        <label asp-for="@Model.user.Name">Name</label>
+        <input asp-for="@Model.user.Name" /><br />
 
-        @*<label asp-for="Time.Start">@Model.Time.Start</label><br />*@
+        <label asp-for="@Model.user.GroupSize">GroupSize</label>
+        <input asp-for="@Model.user.GroupSize" /><br />
 
-        <label asp-for="Name">Name</label>
-        <input asp-for="Name" /><br />
+        <label asp-for="@Model.user.Email">Email</label>
+        <input asp-for="@Model.user.Email" /><br />
 
-        <label asp-for="GroupSize">GroupSize</label>
-        <input asp-for="GroupSize" /><br />
+        <label asp-for="@Model.user.PhoneNumber">PhoneNumber</label>
+        <input asp-for="@Model.user.PhoneNumber" /><br />
 
-        <label asp-for="Email">Email</label>
-        <input asp-for="Email" /><br />
-
-        <label asp-for="PhoneNumber">PhoneNumber</label>
-        <input asp-for="PhoneNumber" /><br />
+        <input type="hidden" asp-for="@Model.time.TimeID" />
 
         <button type="submit">Submit User Information</button>
     </form>
