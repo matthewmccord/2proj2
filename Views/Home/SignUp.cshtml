@@ -40,16 +40,21 @@
     <div class="row">
         <div class="col"></div>
         <div class="col">
+            <h3>Temple Tour Sign Ups</h3>
             <form method='POST' asp-action="GetAvailableUsersByDate" asp-controller="Home">
-                <input class="form-control" type='date' asp-for="Date" />
+                @*<label class="form-label" asp-for="Date">Select a Date:</label>*@
+                <br />
+                <br />
+
+                <input class="form-control" min="2022-04-01" max="2022-04-07" type='date' asp-for="Date" />
                 <br />
                 <button type="submit" class="btn btn-primary" style="width: 100%">Go</button>
             </form>
             <br />
             @if (ViewBag.Users != null)
             {
-                <p>Selct an available time slot</p>
                 <br />
+                <p style="width: 100%; text-align:center;">Select an available time slot</p>
                 foreach (User u in ViewBag.Users)
                 {
                     <div style="margin-top: 8px; margin-bottom: 8px;">
