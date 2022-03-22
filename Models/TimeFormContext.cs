@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 namespace _2proj2.Models
 {
     public class TimeFormContext : DbContext
