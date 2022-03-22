@@ -54,7 +54,8 @@ namespace _2proj2.Controllers
                 u.user.TimeId = u.time.TimeID;
                 FormContext.Add(u.user);
                 FormContext.SaveChanges();
-                return View("Index");
+
+                return View("Confirmation", u);
             }
             else
             {

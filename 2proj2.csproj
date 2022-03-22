@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
@@ -23,6 +24,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+
+    <None Remove="Pages\" />
+    <None Remove="Pages\Admin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="Pages\Admin\" />
+
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\img\" />
