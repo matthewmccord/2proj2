@@ -9,9 +9,9 @@
 
 <div>
     <form method="post" asp-action="TimeForm">
-        @*<label asp-for="@c.TimeID">"@c.TimeID\>@c.Start"-"@c.TimeID\>@c.End"</label>
+       @*<label asp-for="@c.TimeID">"@c.TimeID\>@c.Start"-"@c.TimeID\>@c.End"</label>
         <br />*@
-        <label asp-for="@Model.time.Start">@Model.time.Start</label>
+       <label asp-for="@Model.time.Start">@Model.time.Start</label>
         <br />
         <div asp-validation-summary="All" class="text-danger"></div>
         <label asp-for="@Model.user.Name">Name</label>

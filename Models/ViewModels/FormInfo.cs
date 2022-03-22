@@ -1,12 +1,23 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace _2proj2.Models.ViewModels
 {
     public class FormInfo
     {
-       public User user { get; set; }
-       public Time time { get; set; }
+        public FormInfo()
+        {
+        }
+
+        public FormInfo(DateTime date)
+        {
+            Date = date;
+        }
+
+        [Required]
+        public DateTime Date { get; set; }
 
     }
+  
 }

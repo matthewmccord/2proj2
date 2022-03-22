@@ -12,6 +12,7 @@
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Models\ViewModels\" />
+    <None Remove="Views\Appointment\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.22" />
@@ -25,13 +26,9 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
 
-    <None Remove="Pages\" />
-    <None Remove="Pages\Admin\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\" />
-    <Folder Include="Pages\Admin\" />
-
+    <Folder Include="Views\Appointment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\img\" />
